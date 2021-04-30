@@ -1,0 +1,135 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+
+
+#floating-panel {
+	top: 10px;
+    left: 25%;
+    z-index: 5;
+    padding: 5px;
+    text-align: center;
+    line-height: 30px;
+    padding-left: 10px;
+}
+#map {
+    margin-top: 20px;
+    border-radius: 20px;
+	width: 90%;
+	height: 400px;
+    
+}
+
+#marker{
+	font-size: 4rem;
+}
+
+.container{
+	padding: 30px;
+	min-width: 1500px;
+	padding: 30px;
+    min-height: 100vh;
+	background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+	font-family: 'Original Surfer', cursive;
+	background-size:cover;
+    opacity: initial;
+}
+#nav{
+	width: 1000px;
+	height: 80px;
+	background-color: white;
+	display: inline-block;
+}
+.name{
+	font-size: 2.5rem;
+}
+#road_dash {
+	width: 200px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+	margin-bottom: 20px;   
+}
+
+#road {
+
+	width: 200px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+}
+#car {
+	margin-top: 70px;
+	margin-left: 100px;
+	width: 200px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+}
+#join {
+	margin-top: 70px;
+	width: 200px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+}
+#road_bw {
+	width: 200px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    -webkit-filter: grayscale(100%);
+  	filter: grayscale(100%);
+}
+#car_bw {
+	margin-top: 70px;
+	margin-left: 100px;
+	width: 200px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    -webkit-filter: grayscale(100%);
+ 	filter: grayscale(100%);
+}
+#join_bw {
+	margin-top: 70px;
+	width: 200px;
+    height: 150px;
+    border-radius: 50%;
+    display: block;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+#steps{
+	margin-left: 50px;
+}
+.info{
+	text-align: center;
+}
+#main{
+	display: flex;
+	justify-content: space-between;
+}
+
+.new_trip_img{
+	width: 200px;
+	height: auto;
+	padding: 20px;
+
+}
+
+
+.content{
+
+	width: 1050px;
+	height: auto;
+}
+
+
+
+
+
+
+
+
+
