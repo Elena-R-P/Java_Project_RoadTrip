@@ -60,24 +60,8 @@
 		        </div>
 		    </form:form>
 		</div>
-		<div class="col mt-3">
-		    <h2>Login</h2>
-		    <p class="text-sm-start fw-light text-danger"><c:out value="${error}"></c:out></p>
-		    <form method="post" action="/login">
-		        <div class="mb-3">
-		            <label for="email" class="form-label">Email</label>
-		            <input type="text" id="email" name="email" class="form-control"/>    
-		        </div>
-		        <div class="mb-3">
-		            <label for="password" class="form-label">Password</label>
-		            <input type="password" id="password" name="password" class="form-control"/>
-		        </div>
-		        <div class="mb-3 d-flex justify-content-end">
-		        	<input class="btn btn-info" type="submit" value="Login"/>
-		        </div>
-		    </form>  
-		</div>
-    </div>
+ 		
+    </div> 
 </div>
 </body>
 </html>

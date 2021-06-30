@@ -1,14 +1,20 @@
 package com.ponomareva.javaproject.controllers;
 
+import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,12 +49,20 @@ public class MainController {
 		this.tripService = tripService;
 		this.dayService = dayService;
 	}
-		
+	
+	private Map<String, LocalDateTime> usersLastAccess = new HashMap<>();
+	
+	
 	@RequestMapping("/")
 	public String main(Model model) {
 		model.addAttribute("user", new User());
 		return "index.jsp";
 	}
+//	@GetMapping("/oauth2/authorization/okta")
+//    String helloUser(@AuthenticationPrincipal OidcUser user) {
+//        return "Hello " + user.getAttributes().get("email");
+//    }
+//	
 	
 	@RequestMapping(value="/registration", method=RequestMethod.POST)
 	public String register(
@@ -64,6 +78,7 @@ public class MainController {
 			return "redirect:/dashboard";
 		}
 	}
+	
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String login(
 			@RequestParam(value="email") String email,
@@ -89,6 +104,7 @@ public class MainController {
 			RedirectAttributes redirect,
 			@Param("keyword") String keyword) {
 		Long userId = (Long) session.getAttribute("userId");
+// CHECK IF USER LOGED IN
 		if(userId == null) {
 			redirect.addFlashAttribute("please", "Please Login befre entering our site");
 			return "redirect:/";
